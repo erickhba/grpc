@@ -1,0 +1,60 @@
+// Copyright 2015 gRPC authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.grpc_service";
+option java_outer_classname = "Grpc_ServiceProto";
+option objc_class_prefix = "RTG";
+
+package grpc_service;
+
+// Interface exported by the server.
+service Grpc_Service {
+ 
+  rpc GetVoid(Void) returns (Void) {}
+
+  rpc GetLong(Long) returns (Long) {}
+
+  rpc GetLongBatch(LongBatch) returns (Long) {}
+  
+  rpc GetString(String) returns (String) {}
+
+  
+
+  
+}
+
+message Long {
+  int64 n = 1;
+}
+
+message String {
+  string n = 1;
+}
+
+message LongBatch {
+  int64 n1 = 1;
+  int64 n2 = 2;
+  int64 n3 = 3;
+  int64 n4 = 4;
+  int64 n5 = 5;
+  int64 n6 = 6;
+  int64 n7 = 7;
+  int64 n8 = 8;
+}
+
+
+message Void {}
