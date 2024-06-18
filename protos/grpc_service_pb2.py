@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19protos/grpc_service.proto\x12\x0cgrpc_service\"\x11\n\x04Long\x12\t\n\x01n\x18\x01 \x01(\x03\"\x13\n\x06String\x12\t\n\x01n\x18\x01 \x01(\t\"k\n\tLongBatch\x12\n\n\x02n1\x18\x01 \x01(\x03\x12\n\n\x02n2\x18\x02 \x01(\x03\x12\n\n\x02n3\x18\x03 \x01(\x03\x12\n\n\x02n4\x18\x04 \x01(\x03\x12\n\n\x02n5\x18\x05 \x01(\x03\x12\n\n\x02n6\x18\x06 \x01(\x03\x12\n\n\x02n7\x18\x07 \x01(\x03\x12\n\n\x02n8\x18\x08 \x01(\x03\"\x06\n\x04Void2\xf2\x01\n\x0cGrpc_Service\x12\x33\n\x07GetVoid\x12\x12.grpc_service.Void\x1a\x12.grpc_service.Void\"\x00\x12\x33\n\x07GetLong\x12\x12.grpc_service.Long\x1a\x12.grpc_service.Long\"\x00\x12=\n\x0cGetLongBatch\x12\x17.grpc_service.LongBatch\x1a\x12.grpc_service.Long\"\x00\x12\x39\n\tGetString\x12\x14.grpc_service.String\x1a\x14.grpc_service.String\"\x00\x42:\n\x1dio.grpc.examples.grpc_serviceB\x11Grpc_ServiceProtoP\x01\xa2\x02\x03RTGb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19protos/grpc_service.proto\x12\x0cgrpc_service\"\x11\n\x04Long\x12\t\n\x01n\x18\x01 \x01(\x03\"\x13\n\x06String\x12\t\n\x01n\x18\x01 \x01(\t\"k\n\tLongBatch\x12\n\n\x02n1\x18\x01 \x01(\x03\x12\n\n\x02n2\x18\x02 \x01(\x03\x12\n\n\x02n3\x18\x03 \x01(\x03\x12\n\n\x02n4\x18\x04 \x01(\x03\x12\n\n\x02n5\x18\x05 \x01(\x03\x12\n\n\x02n6\x18\x06 \x01(\x03\x12\n\n\x02n7\x18\x07 \x01(\x03\x12\n\n\x02n8\x18\x08 \x01(\x03\"\x06\n\x04Void\"\x11\n\x04Json\x12\t\n\x01s\x18\x01 \x01(\t2\xa9\x02\n\x0cGrpc_Service\x12\x33\n\x07GetVoid\x12\x12.grpc_service.Void\x1a\x12.grpc_service.Void\"\x00\x12\x33\n\x07GetLong\x12\x12.grpc_service.Long\x1a\x12.grpc_service.Long\"\x00\x12=\n\x0cGetLongBatch\x12\x17.grpc_service.LongBatch\x1a\x12.grpc_service.Long\"\x00\x12\x39\n\tGetString\x12\x14.grpc_service.String\x1a\x14.grpc_service.String\"\x00\x12\x35\n\x07GetJson\x12\x12.grpc_service.Void\x1a\x14.grpc_service.String\"\x00\x42:\n\x1dio.grpc.examples.grpc_serviceB\x11Grpc_ServiceProtoP\x01\xa2\x02\x03RTGb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -30,6 +30,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LONGBATCH']._serialized_end=190
   _globals['_VOID']._serialized_start=192
   _globals['_VOID']._serialized_end=198
-  _globals['_GRPC_SERVICE']._serialized_start=201
-  _globals['_GRPC_SERVICE']._serialized_end=443
+  _globals['_JSON']._serialized_start=200
+  _globals['_JSON']._serialized_end=217
+  _globals['_GRPC_SERVICE']._serialized_start=220
+  _globals['_GRPC_SERVICE']._serialized_end=517
 # @@protoc_insertion_point(module_scope)

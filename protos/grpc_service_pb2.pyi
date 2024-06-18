@@ -39,3 +39,9 @@ class LongBatch(_message.Message):
 class Void(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class Json(_message.Message):
+    __slots__ = ("s",)
+    S_FIELD_NUMBER: _ClassVar[int]
+    s: str
+    def __init__(self, s: _Optional[str] = ...) -> None: ...

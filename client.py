@@ -8,6 +8,7 @@ from protos import grpc_service_pb2, grpc_service_pb2_grpc
 
 def run():
     N = 10
+    #192.168.0.5
     with grpc.insecure_channel('localhost:50051') as channel:
         
         stub = grpc_service_pb2_grpc.Grpc_ServiceStub(channel)        
@@ -58,6 +59,19 @@ def run():
 
         print(f"\nGetString - Execucoes: {N}; Média: {sum(total)/N}\n")
         total.clear()
+
+
+        #Get long batch
+        for i in range(N): 
+            start_time = time.time()
+            response = stub.GetJson(grpc_service_pb2.Json())
+            total.append(time.time() - start_time)
+            print("--- %s seconds ---" % total[i])
+
+        print(f"\nGetJson - Execucoes: {N}; Média: {sum(total)/N}\n")
+        total.clear()
+
+
 
 if __name__ == '__main__':
     run()

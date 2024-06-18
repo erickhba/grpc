@@ -18,7 +18,7 @@ service Grpc_Service {
   
   rpc GetString(String) returns (String) {}
 
-  
+  rpc GetJson(Void) returns (String) {}
 
   
 }
@@ -44,3 +44,7 @@ message LongBatch {
 
 
 message Void {}
+
+message Json {
+  string s = 1;
+}

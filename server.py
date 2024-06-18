@@ -1,8 +1,9 @@
 from concurrent import futures
 import logging
-
+from custom_class import FakeDataAPI
 import grpc
 from protos import grpc_service_pb2_grpc, grpc_service_pb2
+import json
 
 
 class Grpc_ServiceServicer(grpc_service_pb2_grpc.Grpc_ServiceServicer):
@@ -20,6 +21,10 @@ class Grpc_ServiceServicer(grpc_service_pb2_grpc.Grpc_ServiceServicer):
     def GetString(self, request, context):
         resp = request.n
         return grpc_service_pb2.String(n = resp)
+    
+    def GetJson(self, request, context):
+        resp = FakeDataAPI.get_comments()
+        return grpc_service_pb2.Json(s = resp)
     
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))

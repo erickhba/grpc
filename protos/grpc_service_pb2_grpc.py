@@ -60,6 +60,11 @@ class Grpc_ServiceStub(object):
                 request_serializer=protos_dot_grpc__service__pb2.String.SerializeToString,
                 response_deserializer=protos_dot_grpc__service__pb2.String.FromString,
                 _registered_method=True)
+        self.GetJson = channel.unary_unary(
+                '/grpc_service.Grpc_Service/GetJson',
+                request_serializer=protos_dot_grpc__service__pb2.Void.SerializeToString,
+                response_deserializer=protos_dot_grpc__service__pb2.String.FromString,
+                _registered_method=True)
 
 
 class Grpc_ServiceServicer(object):
@@ -90,6 +95,12 @@ class Grpc_ServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetJson(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_Grpc_ServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -111,6 +122,11 @@ def add_Grpc_ServiceServicer_to_server(servicer, server):
             'GetString': grpc.unary_unary_rpc_method_handler(
                     servicer.GetString,
                     request_deserializer=protos_dot_grpc__service__pb2.String.FromString,
+                    response_serializer=protos_dot_grpc__service__pb2.String.SerializeToString,
+            ),
+            'GetJson': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetJson,
+                    request_deserializer=protos_dot_grpc__service__pb2.Void.FromString,
                     response_serializer=protos_dot_grpc__service__pb2.String.SerializeToString,
             ),
     }
@@ -222,6 +238,33 @@ class Grpc_Service(object):
             target,
             '/grpc_service.Grpc_Service/GetString',
             protos_dot_grpc__service__pb2.String.SerializeToString,
+            protos_dot_grpc__service__pb2.String.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetJson(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/grpc_service.Grpc_Service/GetJson',
+            protos_dot_grpc__service__pb2.Void.SerializeToString,
             protos_dot_grpc__service__pb2.String.FromString,
             options,
             channel_credentials,
