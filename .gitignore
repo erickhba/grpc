@@ -2,3 +2,5 @@
 rpyc/__pycache__/
 grpc/__pycache__/
 grpc/protos/__pycache__/
+.vscode
+venv
