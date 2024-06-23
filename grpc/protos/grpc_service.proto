@@ -18,7 +18,7 @@ service Grpc_Service {
   
   rpc GetString(String) returns (String) {}
 
-  rpc GetJson(Void) returns (String) {}
+  rpc GetJson(Json) returns (String) {}
 
   
 }

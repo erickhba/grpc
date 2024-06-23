@@ -23,7 +23,7 @@ class Grpc_ServiceServicer(grpc_service_pb2_grpc.Grpc_ServiceServicer):
         return grpc_service_pb2.String(n = resp)
     
     def GetJson(self, request, context):
-        resp = FakeDataAPI.get_comments()
+        resp = request.n
         return grpc_service_pb2.Json(s = resp)
     
 def serve():
