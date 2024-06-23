@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.grpc_service";
+option java_outer_classname = "Grpc_ServiceProto";
+option objc_class_prefix = "RTG";
+
+package grpc_service;
+
+// Interface exported by the server.
+service Grpc_Service {
+ 
+  rpc GetVoid(Void) returns (Void) {}
+
+  rpc GetLong(Long) returns (Long) {}
+
+  rpc GetLongBatch(LongBatch) returns (Long) {}
+  
+  rpc GetString(String) returns (String) {}
+
+  rpc GetJson(Json) returns (String) {}
+
+  
+}
+
+message Long {
+  int64 n = 1;
+}
+
+message String {
+  string n = 1;
+}
+
+message LongBatch {
+  int64 n1 = 1;
+  int64 n2 = 2;
+  int64 n3 = 3;
+  int64 n4 = 4;
+  int64 n5 = 5;
+  int64 n6 = 6;
+  int64 n7 = 7;
+  int64 n8 = 8;
+}
+
+
+message Void {}
+
+message Json {
+  string s = 1;
+}
