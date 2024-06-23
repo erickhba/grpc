@@ -2,7 +2,7 @@ from concurrent import futures
 import logging
 from custom_class import FakeDataAPI
 import grpc
-from protos import grpc_service_pb2_grpc, grpc_service_pb2
+from grpc.protos import grpc_service_pb2, grpc_service_pb2_grpc
 import json
 
 

@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-from protos import grpc_service_pb2 as protos_dot_grpc__service__pb2
+from grpc.protos import grpc_service_pb2 as grpc_dot_protos_dot_grpc__service__pb2
 
 GRPC_GENERATED_VERSION = '1.64.1'
 GRPC_VERSION = grpc.__version__
@@ -20,7 +20,7 @@ except ImportError:
 if _version_not_supported:
     warnings.warn(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in protos/grpc_service_pb2_grpc.py depends on'
+        + f' but the generated code in grpc/protos/grpc_service_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
@@ -42,28 +42,28 @@ class Grpc_ServiceStub(object):
         """
         self.GetVoid = channel.unary_unary(
                 '/grpc_service.Grpc_Service/GetVoid',
-                request_serializer=protos_dot_grpc__service__pb2.Void.SerializeToString,
-                response_deserializer=protos_dot_grpc__service__pb2.Void.FromString,
+                request_serializer=grpc_dot_protos_dot_grpc__service__pb2.Void.SerializeToString,
+                response_deserializer=grpc_dot_protos_dot_grpc__service__pb2.Void.FromString,
                 _registered_method=True)
         self.GetLong = channel.unary_unary(
                 '/grpc_service.Grpc_Service/GetLong',
-                request_serializer=protos_dot_grpc__service__pb2.Long.SerializeToString,
-                response_deserializer=protos_dot_grpc__service__pb2.Long.FromString,
+                request_serializer=grpc_dot_protos_dot_grpc__service__pb2.Long.SerializeToString,
+                response_deserializer=grpc_dot_protos_dot_grpc__service__pb2.Long.FromString,
                 _registered_method=True)
         self.GetLongBatch = channel.unary_unary(
                 '/grpc_service.Grpc_Service/GetLongBatch',
-                request_serializer=protos_dot_grpc__service__pb2.LongBatch.SerializeToString,
-                response_deserializer=protos_dot_grpc__service__pb2.Long.FromString,
+                request_serializer=grpc_dot_protos_dot_grpc__service__pb2.LongBatch.SerializeToString,
+                response_deserializer=grpc_dot_protos_dot_grpc__service__pb2.Long.FromString,
                 _registered_method=True)
         self.GetString = channel.unary_unary(
                 '/grpc_service.Grpc_Service/GetString',
-                request_serializer=protos_dot_grpc__service__pb2.String.SerializeToString,
-                response_deserializer=protos_dot_grpc__service__pb2.String.FromString,
+                request_serializer=grpc_dot_protos_dot_grpc__service__pb2.String.SerializeToString,
+                response_deserializer=grpc_dot_protos_dot_grpc__service__pb2.String.FromString,
                 _registered_method=True)
         self.GetJson = channel.unary_unary(
                 '/grpc_service.Grpc_Service/GetJson',
-                request_serializer=protos_dot_grpc__service__pb2.Void.SerializeToString,
-                response_deserializer=protos_dot_grpc__service__pb2.String.FromString,
+                request_serializer=grpc_dot_protos_dot_grpc__service__pb2.Json.SerializeToString,
+                response_deserializer=grpc_dot_protos_dot_grpc__service__pb2.String.FromString,
                 _registered_method=True)
 
 
@@ -106,28 +106,28 @@ def add_Grpc_ServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'GetVoid': grpc.unary_unary_rpc_method_handler(
                     servicer.GetVoid,
-                    request_deserializer=protos_dot_grpc__service__pb2.Void.FromString,
-                    response_serializer=protos_dot_grpc__service__pb2.Void.SerializeToString,
+                    request_deserializer=grpc_dot_protos_dot_grpc__service__pb2.Void.FromString,
+                    response_serializer=grpc_dot_protos_dot_grpc__service__pb2.Void.SerializeToString,
             ),
             'GetLong': grpc.unary_unary_rpc_method_handler(
                     servicer.GetLong,
-                    request_deserializer=protos_dot_grpc__service__pb2.Long.FromString,
-                    response_serializer=protos_dot_grpc__service__pb2.Long.SerializeToString,
+                    request_deserializer=grpc_dot_protos_dot_grpc__service__pb2.Long.FromString,
+                    response_serializer=grpc_dot_protos_dot_grpc__service__pb2.Long.SerializeToString,
             ),
             'GetLongBatch': grpc.unary_unary_rpc_method_handler(
                     servicer.GetLongBatch,
-                    request_deserializer=protos_dot_grpc__service__pb2.LongBatch.FromString,
-                    response_serializer=protos_dot_grpc__service__pb2.Long.SerializeToString,
+                    request_deserializer=grpc_dot_protos_dot_grpc__service__pb2.LongBatch.FromString,
+                    response_serializer=grpc_dot_protos_dot_grpc__service__pb2.Long.SerializeToString,
             ),
             'GetString': grpc.unary_unary_rpc_method_handler(
                     servicer.GetString,
-                    request_deserializer=protos_dot_grpc__service__pb2.String.FromString,
-                    response_serializer=protos_dot_grpc__service__pb2.String.SerializeToString,
+                    request_deserializer=grpc_dot_protos_dot_grpc__service__pb2.String.FromString,
+                    response_serializer=grpc_dot_protos_dot_grpc__service__pb2.String.SerializeToString,
             ),
             'GetJson': grpc.unary_unary_rpc_method_handler(
                     servicer.GetJson,
-                    request_deserializer=protos_dot_grpc__service__pb2.Void.FromString,
-                    response_serializer=protos_dot_grpc__service__pb2.String.SerializeToString,
+                    request_deserializer=grpc_dot_protos_dot_grpc__service__pb2.Json.FromString,
+                    response_serializer=grpc_dot_protos_dot_grpc__service__pb2.String.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -156,8 +156,8 @@ class Grpc_Service(object):
             request,
             target,
             '/grpc_service.Grpc_Service/GetVoid',
-            protos_dot_grpc__service__pb2.Void.SerializeToString,
-            protos_dot_grpc__service__pb2.Void.FromString,
+            grpc_dot_protos_dot_grpc__service__pb2.Void.SerializeToString,
+            grpc_dot_protos_dot_grpc__service__pb2.Void.FromString,
             options,
             channel_credentials,
             insecure,
@@ -183,8 +183,8 @@ class Grpc_Service(object):
             request,
             target,
             '/grpc_service.Grpc_Service/GetLong',
-            protos_dot_grpc__service__pb2.Long.SerializeToString,
-            protos_dot_grpc__service__pb2.Long.FromString,
+            grpc_dot_protos_dot_grpc__service__pb2.Long.SerializeToString,
+            grpc_dot_protos_dot_grpc__service__pb2.Long.FromString,
             options,
             channel_credentials,
             insecure,
@@ -210,8 +210,8 @@ class Grpc_Service(object):
             request,
             target,
             '/grpc_service.Grpc_Service/GetLongBatch',
-            protos_dot_grpc__service__pb2.LongBatch.SerializeToString,
-            protos_dot_grpc__service__pb2.Long.FromString,
+            grpc_dot_protos_dot_grpc__service__pb2.LongBatch.SerializeToString,
+            grpc_dot_protos_dot_grpc__service__pb2.Long.FromString,
             options,
             channel_credentials,
             insecure,
@@ -237,8 +237,8 @@ class Grpc_Service(object):
             request,
             target,
             '/grpc_service.Grpc_Service/GetString',
-            protos_dot_grpc__service__pb2.String.SerializeToString,
-            protos_dot_grpc__service__pb2.String.FromString,
+            grpc_dot_protos_dot_grpc__service__pb2.String.SerializeToString,
+            grpc_dot_protos_dot_grpc__service__pb2.String.FromString,
             options,
             channel_credentials,
             insecure,
@@ -264,8 +264,8 @@ class Grpc_Service(object):
             request,
             target,
             '/grpc_service.Grpc_Service/GetJson',
-            protos_dot_grpc__service__pb2.Void.SerializeToString,
-            protos_dot_grpc__service__pb2.String.FromString,
+            grpc_dot_protos_dot_grpc__service__pb2.Json.SerializeToString,
+            grpc_dot_protos_dot_grpc__service__pb2.String.FromString,
             options,
             channel_credentials,
             insecure,
